@@ -1,0 +1,416 @@
+/* =========================
+   CSS VARIABLES
+========================= */
+
+:root {
+
+  --bg-color: #f5f7fb;
+  --text-color: #111827;
+
+  --primary-color: #6366f1;
+  --secondary-color: #8b5cf6;
+
+  --card-bg: rgba(255, 255, 255, 0.7);
+
+  --border-color: rgba(255, 255, 255, 0.3);
+
+  --shadow:
+    0 10px 30px rgba(0, 0, 0, 0.1);
+
+  --radius: 20px;
+
+  --transition: 0.3s ease;
+}
+
+/* DARK MODE */
+
+[data-theme="dark"] {
+
+  --bg-color: #0f172a;
+
+  --text-color: #f8fafc;
+
+  --card-bg: rgba(15, 23, 42, 0.8);
+
+  --border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+
+  font-family: Arial, sans-serif;
+
+  background: var(--bg-color);
+
+  color: var(--text-color);
+
+  transition:
+    background var(--transition),
+    color var(--transition);
+
+  line-height: 1.6;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+
+  width: min(1200px, 90%);
+
+  margin-inline: auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 1000;
+
+  backdrop-filter: blur(20px);
+
+  background: var(--card-bg);
+
+  border-bottom:
+    1px solid var(--border-color);
+}
+
+.navbar {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 1rem 0;
+}
+
+.logo {
+
+  font-size: 1.5rem;
+
+  font-weight: bold;
+}
+
+.nav-links {
+
+  display: none;
+
+  list-style: none;
+
+  gap: 2rem;
+}
+
+.nav-links a {
+
+  text-decoration: none;
+
+  color: var(--text-color);
+
+  font-weight: 500;
+}
+
+.theme-toggle {
+
+  border: none;
+
+  background: var(--primary-color);
+
+  color: white;
+
+  padding: 0.7rem 1rem;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+
+  min-height: 90vh;
+
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  align-items: center;
+
+  gap: 3rem;
+
+  padding: 4rem 0;
+}
+
+.hero-content h2 {
+
+  font-size: clamp(3rem, 8vw, 5rem);
+
+  line-height: 1.1;
+}
+
+.hero-content p {
+
+  margin: 1.5rem 0;
+
+  max-width: 500px;
+}
+
+.hero-buttons {
+
+  display: flex;
+
+  gap: 1rem;
+
+  flex-wrap: wrap;
+}
+
+.hero-image img {
+
+  border-radius: var(--radius);
+
+  box-shadow: var(--shadow);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+
+  text-decoration: none;
+
+  padding: 1rem 1.5rem;
+
+  border-radius: 999px;
+
+  font-weight: bold;
+
+  transition: var(--transition);
+
+  display: inline-block;
+}
+
+.primary {
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary-color),
+      var(--secondary-color)
+    );
+
+  color: white;
+}
+
+.secondary {
+
+  border: 2px solid var(--primary-color);
+
+  color: var(--primary-color);
+}
+
+.btn:hover {
+
+  transform: translateY(-5px);
+}
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects {
+
+  padding: 6rem 0;
+}
+
+.section-title {
+
+  text-align: center;
+
+  margin-bottom: 3rem;
+
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.project-grid {
+
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 2rem;
+}
+
+.card {
+
+  background: var(--card-bg);
+
+  border:
+    1px solid var(--border-color);
+
+  border-radius: var(--radius);
+
+  overflow: hidden;
+
+  backdrop-filter: blur(20px);
+
+  box-shadow: var(--shadow);
+
+  transition: var(--transition);
+}
+
+.card:hover {
+
+  transform: translateY(-10px);
+}
+
+.card-content {
+
+  padding: 1.5rem;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+
+  padding: 6rem 0;
+
+  display: grid;
+
+  gap: 3rem;
+}
+
+.skills {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 1rem;
+}
+
+.skills span {
+
+  padding: 0.8rem 1rem;
+
+  border-radius: 999px;
+
+  background: var(--card-bg);
+
+  border:
+    1px solid var(--border-color);
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+
+  padding: 6rem 0;
+}
+
+.contact-form {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 1rem;
+
+  max-width: 700px;
+
+  margin-inline: auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+
+  padding: 1rem;
+
+  border-radius: 12px;
+
+  border:
+    1px solid var(--border-color);
+
+  background: var(--card-bg);
+
+  color: var(--text-color);
+}
+
+.contact-form button {
+
+  border: none;
+
+  cursor: pointer;
+}
+
+/* =========================
+   TABLET RESPONSIVE
+========================= */
+
+@media (min-width: 768px) {
+
+  .nav-links {
+
+    display: flex;
+  }
+
+  .hero {
+
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .project-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .about {
+
+    grid-template-columns:
+      1fr 1fr;
+  }
+}
+
+/* =========================
+   DESKTOP RESPONSIVE
+========================= */
+
+@media (min-width: 1024px) {
+
+  .project-grid {
+
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+}
